@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/white_gradient"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+
+    <RelativeLayout
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/back"
+            android:tint="#000" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/promptbold"
+                android:text="Document Translate"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/corner"
+        android:padding="1dp">
+
+        <LinearLayout
+            android:id="@+id/from"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_word"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/spinFrom"
+                    android:scrollbars="none"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:backgroundTint="#e6e6e6"
+                    android:fontFamily="@font/promptlight"
+                    android:gravity="center"
+                    android:textSize="12dp" />
+
+                <ImageView
+                    android:id="@+id/speakFrom"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/speak"
+                    android:tint="@color/start_color" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/edFrom"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="#fff"
+                    android:fontFamily="@font/promptlight"
+                    android:gravity="start"
+                    android:textColor="#000"
+                    android:textSize="14dp" />
+
+                <ImageView
+                    android:id="@+id/delete"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="4dp"
+                    android:src="@mipmap/delete"
+                    android:tint="#000"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/btnRun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:rotation="180"
+                android:src="@mipmap/run" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/from"
+            android:background="#f6f6f6"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/spinTo"
+                    android:scrollbars="none"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:backgroundTint="#e6e6e6"
+                    android:fontFamily="@font/promptlight"
+                    android:gravity="center"
+                    android:textSize="12dp" />
+
+                <ImageView
+                    android:id="@+id/speakTo"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/speak"
+                    android:tint="@color/start_color" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tvResult"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:background="#f6f6f6"
+                android:fontFamily="@font/promptlight"
+                android:gravity="start"
+                android:textColor="#000"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:id="@+id/copyTo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:src="@mipmap/copy" />
+        </LinearLayout>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnSwap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/from"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-17.5dp"
+            android:src="@mipmap/sync"
+            app:backgroundTint="#fff"
+            app:fabCustomSize="35dp"
+            app:maxImageSize="17.5dp" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/footer"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/promptlight"
+        android:text="Tap to speak"
+        android:textColor="@color/start_color"
+        android:textSize="12dp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tvFrom"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/btnVoice"
+                android:layout_weight="1"
+                android:background="@drawable/corner_tran"
+                android:fontFamily="@font/promptbold"
+                android:gravity="center"
+                android:lines="1"
+                android:text="English" />
+
+            <TextView
+                android:id="@+id/tvTo"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/btnVoice"
+                android:layout_weight="1"
+                android:background="@drawable/corner_tran"
+                android:fontFamily="@font/promptbold"
+                android:gravity="center"
+                android:text="Vietnamese"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/btnVoice"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/voice_2"
+            app:civ_border_color="#f9feff"
+            app:civ_border_width="5dp" />
+
+
+    </RelativeLayout>
+</RelativeLayout>
